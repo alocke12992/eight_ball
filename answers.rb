@@ -1,4 +1,5 @@
 require_relative 'main'
+require 'colorize'
 
 class  Answers
 
@@ -39,10 +40,6 @@ end
 def question_out
   randomize = @answers.sample
   puts "#{randomize}"
-end 
-=======
-puts "I am the spooky Magic Eight Ball".colorize(:red)
-puts "ASK YOUR QUESTION, PEASANT".colorize(:red)
-question_input = gets.strip
+end
 
-# blah
+end
