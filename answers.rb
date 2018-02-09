@@ -2,6 +2,7 @@ require_relative 'main'
 
 class  Answers
 
+<<<<<<< HEAD
   def initialize
 
     @answers = [ "It is certain",
@@ -38,3 +39,10 @@ def question_out
   randomize = @answers.sample
   puts "#{randomize}"
 end 
+=======
+puts "I am the spooky Magic Eight Ball".colorize(:red)
+puts "ASK YOUR QUESTION, PEASANT".colorize(:red)
+question_input = gets.strip
+
+# blah
+>>>>>>> 0cadf7023f8723824b0ea2c34c278e98d92bb3f2

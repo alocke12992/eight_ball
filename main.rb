@@ -10,7 +10,8 @@ class Main
 def initialize
   answers = @answers
 
-def Menu
+def menu
+  while true
   puts "==========================="
   puts "======== Main Menu ========"
   puts "==========================="
@@ -19,8 +20,10 @@ def Menu
   choice = gets.to_i
   case choice
     when 1
-      Answers.question_input
+      # Answers.question_input
+      puts "chiketycheck"
     when 2
       exit
     end
+  end
 end
