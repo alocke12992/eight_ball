@@ -2,6 +2,7 @@ require_relative 'main'
 
 class  Answers
 
+#ccok
 
 puts "I am the spooky Magic Eight Ball".colorize(:red)
 puts "ASK YOUR QUESTION, PEASANT".colorize(:red)
