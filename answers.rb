@@ -39,8 +39,8 @@ def question_input
 end
 
 def question_out
-  randomize = @answers.sample
-  puts "#{randomize}"
+  randomize = @response.sample
+  puts "#{randomize}".colorize(:red)
 end
 
 end
