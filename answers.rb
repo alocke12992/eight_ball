@@ -17,6 +17,7 @@ class  Answers
 
     @user_arr = []
 
+    @user_arr = []
     @response = [ "It is certain",
     'It is decidedly so',
     'Without a doubt',
@@ -59,6 +60,18 @@ class  Answers
     @user_arr << user_input
   end 
 
+
+  def question_out
+    randomize = @combo.sample
+    puts "#{randomize}".colorize(:red)
+  end
+
+  def add_answer
+    puts "What response would you like to add?"
+    user_input = gets.strip 
+    @user_arr << user_input
+  end 
+
   
 def question_out
   randomize = @combo.sample
@@ -77,5 +90,5 @@ def combo_array
     add_answer
   end
   puts "Would you like to view the question?"
-
+end
 end
