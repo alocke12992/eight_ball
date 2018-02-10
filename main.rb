@@ -26,7 +26,7 @@ class Main
       when 1
         @answers.question_input
       when 2
-#        addanswersplaceholder
+        @answer.add_answer 
       when 3
 #        resetanswersplaceholder       
       when 4
