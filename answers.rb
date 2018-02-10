@@ -3,6 +3,9 @@
 # merge those two arrays  
 #Add the arrays
 
+# create second array for user input 
+# add the arrays 
+# reset = clear the second array
 require 'colorize'
 
 class  Answers
@@ -13,6 +16,7 @@ class  Answers
     @combo = []
 
     @user_arr = []
+
     @response = [ "It is certain",
     'It is decidedly so',
     'Without a doubt',
@@ -56,4 +60,22 @@ class  Answers
   end 
 
   
+def question_out
+  randomize = @combo.sample
+  puts "#{randomize}".colorize(:red)
+end
+
+def combo_array
+  @combo = @user_arr + @response
+  puts "Would you like to add another? (y/n)"
+  choice = gets.to_i
+  if choice == 'y'
+    add_answer
+  elsif choice == 'n'
+  else
+    puts "Invalid option."
+    add_answer
+  end
+  puts "Would you like to view the question?"
+
 end

@@ -28,7 +28,7 @@ class Main
       when 2
 #        addanswersplaceholder
       when 3
-#        resetanswersplaceholder
+#        resetanswersplaceholder       
       when 4
         puts "GOODBYE, MORTAL".colorize(:red)
         exit
