@@ -1,12 +1,18 @@
+#TODO 
+# create second array for user input
+# merge those two arrays  
+#Add the arrays
 
 require 'colorize'
 
 class  Answers
 
-  attr_accessor :response
+  attr_accessor :response :combo :user_arr
 #comment
   def initialize
-  
+    @combo = []
+
+    @user_arr = []
     @response = [ "It is certain",
     'It is decidedly so',
     'Without a doubt',
@@ -29,18 +35,25 @@ class  Answers
     'Very doubtful',
     ] 
 
-end
+  end
 
-def question_input
-  puts "I am the spooky Magic Eight Ball".colorize(:red)
-  puts "ASK YOUR QUESTION, PEASANT".colorize(:red)
-  question_input = gets.strip
-  question_out
-end
+  def question_input
+    puts "I am the spooky Magic Eight Ball".colorize(:red)
+    puts "ASK YOUR QUESTION, PEASANT".colorize(:red)
+    question_input = gets.strip
+    question_out
+  end
 
-def question_out
-  randomize = @response.sample
-  puts "#{randomize}".colorize(:red)
-end
+  def question_out
+    randomize = @combo.sample
+    puts "#{randomize}".colorize(:red)
+  end
 
+  def add_answer
+    puts "What response would you like to add?"
+    user_input = gets.strip 
+    @user_arr << user_input
+  end 
+
+  
 end
