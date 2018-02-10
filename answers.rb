@@ -4,7 +4,7 @@ require 'colorize'
 class  Answers
 
   attr_accessor :response
-
+#comment
   def initialize
   
     @response = [ "It is certain",

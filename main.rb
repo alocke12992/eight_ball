@@ -17,13 +17,20 @@ class Main
     puts "======== Main Menu ========"
     puts "==========================="
     puts "1) Ask a question"
-    puts "2) Quit"
+    puts "2) Add an answer"
+    puts "3) Reset to default answers"
+    puts "4) Quit"
     choice = gets.to_i
     case choice
       
       when 1
         @answers.question_input
       when 2
+#        addanswersplaceholder
+      when 3
+#        resetanswersplaceholder
+      when 4
+        puts "GOODBYE, MORTAL".colorize(:red)
         exit
       end
     end
