@@ -5,6 +5,7 @@
 require_relative 'answers'
 require 'colorize'
 require 'pry'
+
 class Main
   
   def initialize
@@ -13,29 +14,26 @@ class Main
 
   def menu
     while true
-    puts "==========================="
-    puts "======== Main Menu ========"
-    puts "==========================="
+    puts "===============================".colorize(:red)
+    print "=========".colorize(:red) 
+    print " Welcome to ".colorize(:white)
+    puts "==========".colorize(:red)
+    print "=====".colorize(:red) 
+    print " The Magic EightBall ".colorize(:white)
+    puts "=====".colorize(:red)
+    puts "===============================".colorize(:red)
     puts "1) Ask the Magic Eight Ball a question"
-    puts "2) Add a custom response"
-    puts "3) Reset to default responses"
-    puts "4) View Responses"
-    puts "5) Quit"
+    puts "2) Settings" 
+    puts "3) Quit"
     choice = gets.to_i
     case choice
       
       when 1
         @answers.question_input
       when 2
-        @answers.add_answer 
+        @answers.settings
       when 3
-        puts "The custom responses have been reset"
-        @answers.reset
-      when 4
-        @answers.view
-      when 5
         puts "GOODBYE, MORTAL".colorize(:red)
-        `say "GOODBYE, MORTAL"`
         exit
       end
     end
