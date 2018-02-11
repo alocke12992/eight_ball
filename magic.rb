@@ -1,21 +1,15 @@
-# - Menu
-#   - Question
-#     - Random
-#   - Exit
 require_relative 'answers'
 require 'colorize'
 require 'pry'
 
-class Main
-  attr_accessor :answers 
+class Magic 
+attr_accessor :answers 
 
   def initialize
-    @answers = Answers.new
+    @answers_magic = Answers.new
   end
 
-
-  def menu
-    while true 
+  def menu_easter_egg
     puts "===============================".colorize(:red)
     print "=========".colorize(:red) 
     print " Welcome to ".colorize(:white)
@@ -25,20 +19,19 @@ class Main
     puts "=====".colorize(:red)
     puts "===============================".colorize(:red)
     puts "1) Ask the Magic Eight Ball a question"
-    puts "2) Quit"
+    puts "2) Settings" 
+    puts "3) Quit"
+    
     choice = gets.to_i
-    case choice
-      
-      when 1
-        @answers.question_input
-      when 2
+    if choice == 1
+        @answers_magic.question_input
+    elsif choice == 1
+        @answers_magic.settings
+     elsif choice == 1
         puts "GOODBYE, MORTAL".colorize(:red)
         exit
-      end
-    end
-  end 
-
-end
-
-@m8 = Main.new
-@m8.menu
+     end
+    
+  end
+  
+end 

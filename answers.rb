@@ -14,7 +14,9 @@ class  Answers
   attr_accessor :response, :combo, :user_arr
 #comment
   def initialize
-    @easter_egg = "Magic"
+    @response_easter_egg = "Responses"
+    @view_easter_egg = "View"
+    @settings_easter_egg = "Settings"
     @user_arr = []
     @response = [ "It is certain",
     'It is decidedly so',
@@ -39,18 +41,31 @@ class  Answers
     puts "ASK YOUR QUESTION, PEASANT".colorize(:red)
     
     question_input = gets.strip
-    if question_input == @easter_egg 
-      sleep(0.5)
-      puts "Oooooo You know the secret question.".colorize(:red)
-      sleep(0.5)
-      puts "You may now add your own costom response.".colorize(:red)
-      add_answer
-    else 
-      sleep(0.5)
-      question_out
-      sleep(0.5)
+      if question_input == @response_easter_egg 
+        sleep(0.5)
+        puts "Oooooo You have unlocked a new ability...".colorize(:red)
+        sleep(0.5)
+        puts "You may now add your own Costom responses.".colorize(:red)
+        add_answer
+      elsif question_input == @view_easter_egg
+        sleep(0.5)
+        puts "Oooooo You have unlocked a new ability...".colorize(:red)
+        sleep(0.5)
+        puts "You may now view the Magic Responses.".colorize(:red)
+        responses
+      elsif question_input == @settings_easter_egg
+        sleep(0.5)
+        puts "Oooooo You have unlocked a new ability...".colorize(:red)
+        sleep(0.5)
+        puts "You may now view the Magic Eight Ball Settings.".colorize(:red)
+        settings
+      else 
+        sleep(0.5)
+        question_out
+        sleep(0.5)
+      end 
     end 
-  end
+
 
   def question_out
     @combo
