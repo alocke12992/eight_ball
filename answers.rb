@@ -7,7 +7,7 @@
 # add the arrays 
 # reset = clear the second array
 require 'colorize'
-
+require 'pry'
 
 class  Answers
 
@@ -18,60 +18,44 @@ class  Answers
     @view_easter_egg = "View"
     @settings_easter_egg = "Settings"
     @user_arr = []
-    @response = [ "It is certain",
-    'It is decidedly so',
-    'Without a doubt',
-    'You may rely on it',
-    'Ask again later',
-    'Concentrate and ask again',
-    'Don\'t count on it',
-    'My sources say no',
-    'Outlook not so good',
-    'Very doubtful',
-    ] 
+    @default_response = [ "It is certain", "It is decidedly so",
+"Without a doubt", "You may rely on it", 
+"Reply hazy try again", "I Cannot predict now", "Don't count on it",
+"My sources say no","Outlook not so good"
+] 
 
-    @combo = @user_arr + @response
-
+    @combo = [] 
+    @combo = @default_response  + @user_arr
   end
 
   def question_input
-    sleep(1)
+   
     puts "I am the spooky Magic Eight Ball".colorize(:red)
-    sleep(1)
     puts "ASK YOUR QUESTION, PEASANT".colorize(:red)
-    
+   
     question_input = gets.strip
       if question_input == @response_easter_egg 
-        sleep(0.5)
         puts "Oooooo You have unlocked a new ability...".colorize(:red)
-        sleep(0.5)
         puts "You may now add your own Costom responses.".colorize(:red)
         add_answer
       elsif question_input == @view_easter_egg
-        sleep(0.5)
         puts "Oooooo You have unlocked a new ability...".colorize(:red)
-        sleep(0.5)
         puts "You may now view the Magic Responses.".colorize(:red)
+        `say "You may now view the Magic Responses."`
         responses
       elsif question_input == @settings_easter_egg
-        sleep(0.5)
         puts "Oooooo You have unlocked a new ability...".colorize(:red)
-        sleep(0.5)
         puts "You may now view the Magic Eight Ball Settings.".colorize(:red)
         settings
       else 
-        sleep(0.5)
         question_out
-        sleep(0.5)
       end 
     end 
 
 
   def question_out
-    @combo
     randomize = @combo.sample
     puts "#{randomize}".colorize(:red)
-    
   end
 
   def add_answer
@@ -79,6 +63,8 @@ class  Answers
     user_input = gets.strip 
     @user_arr << user_input
     add_another
+  
+
   end 
 
 
@@ -88,7 +74,6 @@ class  Answers
     if choice == 'y'
       add_answer
     elsif choice == 'n'
-
     else
       puts "Invalid option."
       add_answer
@@ -144,11 +129,13 @@ class  Answers
         responses
       when 2  
         puts "Here are the default responses:"
-        puts @response 
+        puts @default_reponse 
+        puts @default_response.each {|n| "n"}
         responses
       when 3 
        puts "Here are all of the responses:"
        puts @combo
+       puts @combo.each {|n| "n"}
        responses
       when 4
         settings
@@ -166,8 +153,6 @@ class  Answers
   def reset
     @user_arr = [] 
   end 
-
-
   
 
 end
